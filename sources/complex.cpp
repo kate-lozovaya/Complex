@@ -29,7 +29,7 @@ TComplex TComplex::operator * (const TComplex &N)
 }
 TComplex TComplex::operator / (const TComplex &N)
 {
-	return TComplex((real*N.real + imaginary*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2))), (N.real*imaginary - real*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2))));
+	return TComplex((real*N.real + imaginary*N.imaginary) / ((N.real*N.real + N.imaginary*N.imaginary), (N.real*imaginary - real*N.imaginary) / (N.real*N.rea + N.imaginary*N.imaginary));
 }
 TComplex TComplex::operator += (const TComplex &N)
 {
@@ -52,8 +52,8 @@ TComplex TComplex::operator *= (const TComplex &N)
 }
 TComplex TComplex::operator /= (const TComplex &N)
 {
-	double a = (real*N.real + imaginary*N.imaginary) / (pow(N.real, 2) + pow(N.imaginary, 2));
-	imaginary = (N.real*imaginary - real*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2)));
+	double a = (real*N.real + imaginary*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
+	imaginary = (N.real*imaginary - real*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 	real = a;
 	return TComplex(real, imaginary);
 }
