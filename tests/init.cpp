@@ -15,10 +15,10 @@ SCENARIO("complex with params", "[init]")
 	REQUIRE(complex.imaginary_() == 3);
 }
 
-SCENARIO("*", "[init]") 
+SCENARIO("copy", "[init]") 
 {
 	TComplex A(7, 6);
-	TComplex B(5, 4);
-	TComplex C(11, 58);
-	REQUIRE(A*B==C);
+	TComplex B(A);
+	REQUIRE(copy.real_ == 7);
+	REQUIRE(copy.imaginary_ == 7);
 }
