@@ -14,3 +14,11 @@ SCENARIO("complex with params", "[init]")
 	REQUIRE(complex.real() == 2);
 	REQUIRE(complex.imaginary() == 3);
 }
+
+SCENARIO("*", "[init]") 
+{
+	TComplex A(7, 6);
+	TComplex B(5, 4);
+	TComplex C(11, 58);
+	REQUIRE(A*B==C);
+}
