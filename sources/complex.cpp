@@ -29,7 +29,7 @@ TComplex TComplex::operator * (const TComplex &N)
 }
 TComplex TComplex::operator / (const TComplex &N)
 {
-	return TComplex((real*N.real + imaginary*N.imaginary) / ((N.real*N.real + N.imaginary*N.imaginary), (N.real*imaginary - real*N.imaginary) / (N.real*N.rea + N.imaginary*N.imaginary));
+	return TComplex((real*N.real + imaginary*N.imaginary) / ((N.real*N.real + N.imaginary*N.imaginary), (N.real*imaginary - real*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 }
 TComplex TComplex::operator += (const TComplex &N)
 {
