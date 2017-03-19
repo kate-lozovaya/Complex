@@ -44,7 +44,7 @@ SCENARIO("+=")
 	TComplex A(4, 5);
 	TComplex B(4, 5);
 	TComplex C(8, 10);
-	REQUIRE(A+=B==C);
+	REQUIRE((A+=B)==C);
 }
 
 SCENARIO("-=")
@@ -52,7 +52,7 @@ SCENARIO("-=")
 	TComplex A(9, 9);
 	TComplex B(4, 5);
 	TComplex C(5, 4);
-	REQUIRE(A-=B==C);
+	REQUIRE((A-=B)==C);
 }
 
 SCENARIO("*=")
@@ -60,7 +60,7 @@ SCENARIO("*=")
 	TComplex A(4, 5);
 	TComplex B(4, 5);
 	TComplex C(-9, 40);
-	REQUIRE(A*=B==C);
+	REQUIRE((A*=B)==C);
 }
 
 SCENARIO("/=")
@@ -68,7 +68,7 @@ SCENARIO("/=")
 	TComplex A(4, 5);
 	TComplex B(4, 5);
 	TComplex C(1, 0);
-	REQUIRE(A/=B==C);
+	REQUIRE((A/=B)==C);
 }
 
 SCENARIO("=")
@@ -83,7 +83,10 @@ SCENARIO("==")
 {
 	TComplex A(4, 5);
 	TComplex B(4, 5);
-	REQUIRE(A == B);
+	bool f;
+	if (A == B)
+		f = true;
+	REQUIRE(f == true);
 }
 
 
