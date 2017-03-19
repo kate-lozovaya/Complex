@@ -1,6 +1,4 @@
 #include "complex.hpp"
-#include <iostream>
-using namespace std;
 
 TComplex::TComplex()
 {
@@ -76,7 +74,7 @@ TComplex&  TComplex::operator = (const TComplex &N)
 	return *this;
 }
 
-const bool& TComplex::operator == (const TComplex &N)
+const bool TComplex::operator == (const TComplex &N)
 {
 	if (real == N.real&&imaginary == N.imaginary)
 		return true;
