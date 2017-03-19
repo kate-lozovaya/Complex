@@ -57,7 +57,7 @@ TComplex TComplex::operator /= (const TComplex &N)
 	real = a;
 	return TComplex(real, imaginary);
 }
-TComplex&  TComplex::operator = (const TComplex &N)
+TComplex  TComplex::operator = (const TComplex &N)
 {
 	if (&N == this)
 		return *this;
