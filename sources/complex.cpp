@@ -17,11 +17,11 @@ TComplex::TComplex(const TComplex &A)
 	real = A.real;
 	imaginary = A.imaginary;
 }
-double TComplex::real()
+double TComplex::real_()
 {
 	return real;
 }
-double TComplex::imaginary()
+double TComplex::imaginary_()
 {
 	return imaginary;
 }
