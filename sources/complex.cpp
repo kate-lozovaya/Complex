@@ -23,47 +23,39 @@ double TComplex::imaginary_()
 {
 	return imaginary;
 }
-TComplex TComplex::operator * (TComplex &N)const
+TComplex TComplex::operator * (const TComplex &N)
 {
-	TComplex res(real, imaginary);
-	res.real = real*N.real - imaginary*N.imaginary;
-	res.imaginary = real*N.imaginary + imaginary*N.real;
-	return res;
+	return TComplex(real*N.real - imaginary*N.imaginary, real*N.imaginary + imaginary*N.real);
 }
-TComplex TComplex::operator / (TComplex &N)const
+TComplex TComplex::operator / (const TComplex &N)
 {
-	TComplex res(real, imaginary);
-	res.real = (real*N.real + imaginary*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2)));
-	res.imaginary = (N.real*imaginary - real*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2)));
-	return res;
+	return TComplex((real*N.real + imaginary*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2))), (N.real*imaginary - real*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2))));
 }
-TComplex& TComplex::operator += (const TComplex &N)
+TComplex TComplex::operator += (const TComplex &N)
 {
 	real += N.real;
 	imaginary += N.imaginary;
-	TComplex res(real, imaginary);
-	return res;
+	return TComplex(real, imaginary);
 }
-TComplex& TComplex::operator -= (const TComplex &N)
+TComplex TComplex::operator -= (const TComplex &N)
 {
 	real -= N.real;
 	imaginary -= N.imaginary;
-	TComplex res(real, imaginary);
-	return res;
+	return TComplex(real, imaginary);
 }
-TComplex& TComplex::operator *= (const TComplex &N)
+TComplex TComplex::operator *= (const TComplex &N)
 {
 	double a = real*N.real - imaginary*N.imaginary;
 	imaginary = real*N.imaginary + imaginary*N.real;
 	real = a;
 	return TComplex(real, imaginary);
 }
-TComplex& TComplex::operator /= (const TComplex &N)
+TComplex TComplex::operator /= (const TComplex &N)
 {
 	double a = (real*N.real + imaginary*N.imaginary) / (pow(N.real, 2) + pow(N.imaginary, 2));
 	imaginary = (N.real*imaginary - real*N.imaginary) / ((pow(N.real, 2) + pow(N.imaginary, 2)));
 	real = a;
-	return TComplex(a, imaginary);
+	return TComplex(real, imaginary);
 }
 TComplex&  TComplex::operator = (const TComplex &N)
 {
