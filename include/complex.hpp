@@ -9,6 +9,8 @@ public:
 	TComplex();
 	TComplex(double b, double c);
 	TComplex(const TComplex &A);
+	double real();
+	double imaginary();
 	TComplex operator * (TComplex &N)const;
 	TComplex operator / (TComplex &N)const;
 	TComplex& operator += (const TComplex &N);
