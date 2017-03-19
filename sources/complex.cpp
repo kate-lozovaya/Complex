@@ -17,6 +17,14 @@ TComplex::TComplex(const TComplex &A)
 	real = A.real;
 	imaginary = A.imaginary;
 }
+double TComplex::real()
+{
+	return real;
+}
+double TComplex::imaginary()
+{
+	return imaginary;
+}
 TComplex TComplex::operator * (TComplex &N)const
 {
 	TComplex res(real, imaginary);
