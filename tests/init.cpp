@@ -20,5 +20,5 @@ SCENARIO("copy", "[init]")
 	TComplex A(7, 6);
 	TComplex B(A);
 	REQUIRE(copy.real_ == 7);
-	REQUIRE(copy.imaginary_ == 7);
+	REQUIRE(copy.imaginary_ == 6);
 }
