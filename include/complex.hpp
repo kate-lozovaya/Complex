@@ -11,8 +11,8 @@ public:
 	TComplex(const TComplex &A);
 	double real_();
 	double imaginary_();
-	TComplex operator * (const TComplex &N);
-	TComplex operator / (const TComplex &N);
+	TComplex operator * (const TComplex &N)const;
+	TComplex operator / (const TComplex &N)const;
 	TComplex operator += (const TComplex &N);
 	TComplex operator -= (const TComplex &N);
 	TComplex operator *= (const TComplex &N);
