@@ -65,13 +65,13 @@ TComplex&  TComplex::operator = (const TComplex &N)
 	imaginary = N.imaginary;
 	return *this;
 }
-bool TComplex::operator == (const TComplex &N)
+bool TComplex::operator == (const TComplex &N)const
 {
 	if (real == N.real&&imaginary == N.imaginary)
 		return true;
 	return false;
 }
-ostream& operator << (ostream &out, TComplex &N)
+ostream& operator << (ostream &out, const TComplex &N)
 {
 	if (N.imaginary > 0)
 	{
