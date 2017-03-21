@@ -35,27 +35,27 @@ TComplex& TComplex::operator += (const TComplex &N)
 {
 	real += N.real;
 	imaginary += N.imaginary;
-	return TComplex(real, imaginary);
+	return *this;
 }
 TComplex& TComplex::operator -= (const TComplex &N)
 {
 	real -= N.real;
 	imaginary -= N.imaginary;
-	return TComplex(real, imaginary);
+	return *this;
 }
 TComplex& TComplex::operator *= (const TComplex &N)
 {
 	double a = real*N.real - imaginary*N.imaginary;
 	imaginary = real*N.imaginary + imaginary*N.real;
 	real = a;
-	return TComplex(real, imaginary);
+	return *this;
 }
 TComplex& TComplex::operator /= (const TComplex &N)
 {
 	double a = ((real*N.real + imaginary*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 	imaginary = ((N.real*imaginary - real*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 	real = a;
-	return TComplex(real, imaginary);
+	return *this;
 }
 TComplex&  TComplex::operator = (const TComplex &N)
 {
