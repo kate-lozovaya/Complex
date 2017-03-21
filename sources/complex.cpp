@@ -15,11 +15,11 @@ TComplex::TComplex(const TComplex &A)
 	real = A.real;
 	imaginary = A.imaginary;
 }
-double TComplex::real_()
+double TComplex::real_()const
 {
 	return real;
 }
-double TComplex::imaginary_()
+double TComplex::imaginary_()const
 {
 	return imaginary;
 }
@@ -31,33 +31,33 @@ TComplex TComplex::operator / (const TComplex &N)const
 {
 	return TComplex((real*N.real + imaginary*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary), (N.real*imaginary - real*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 }
-TComplex TComplex::operator += (const TComplex &N)
+TComplex& TComplex::operator += (const TComplex &N)
 {
 	real += N.real;
 	imaginary += N.imaginary;
 	return TComplex(real, imaginary);
 }
-TComplex TComplex::operator -= (const TComplex &N)
+TComplex& TComplex::operator -= (const TComplex &N)
 {
 	real -= N.real;
 	imaginary -= N.imaginary;
 	return TComplex(real, imaginary);
 }
-TComplex TComplex::operator *= (const TComplex &N)
+TComplex& TComplex::operator *= (const TComplex &N)
 {
 	double a = real*N.real - imaginary*N.imaginary;
 	imaginary = real*N.imaginary + imaginary*N.real;
 	real = a;
 	return TComplex(real, imaginary);
 }
-TComplex TComplex::operator /= (const TComplex &N)
+TComplex& TComplex::operator /= (const TComplex &N)
 {
 	double a = ((real*N.real + imaginary*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 	imaginary = ((N.real*imaginary - real*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 	real = a;
 	return TComplex(real, imaginary);
 }
-TComplex  TComplex::operator = (const TComplex &N)
+TComplex&  TComplex::operator = (const TComplex &N)
 {
 	if (&N == this)
 		return *this;
@@ -65,14 +65,13 @@ TComplex  TComplex::operator = (const TComplex &N)
 	imaginary = N.imaginary;
 	return *this;
 }
-
-const bool TComplex::operator == (const TComplex &N)
+bool TComplex::operator == (const TComplex &N)
 {
 	if (real == N.real&&imaginary == N.imaginary)
 		return true;
 	return false;
 }
-ostream& operator << (ostream &out, TComplex &N)
+ostream& operator << (ostream &out, const TComplex &N)
 {
 	if (N.imaginary > 0)
 	{
@@ -87,7 +86,7 @@ ostream& operator << (ostream &out, TComplex &N)
 	}
 	return out;
 }
-istream& operator >> (istream &in, TComplex &N)
+istream& operator >> (istream &in, const TComplex &N)
 {
 	cout << "Enter the real part of the complex number ";
 	in >> N.real;
