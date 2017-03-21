@@ -71,7 +71,7 @@ bool TComplex::operator == (const TComplex &N)
 		return true;
 	return false;
 }
-ostream& operator << (ostream &out, const TComplex &N)
+ostream& operator << (ostream &out, TComplex &N)
 {
 	if (N.imaginary > 0)
 	{
@@ -86,7 +86,7 @@ ostream& operator << (ostream &out, const TComplex &N)
 	}
 	return out;
 }
-istream& operator >> (istream &in, const TComplex &N)
+istream& operator >> (istream &in, TComplex &N)
 {
 	cout << "Enter the real part of the complex number ";
 	in >> N.real;
