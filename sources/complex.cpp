@@ -23,11 +23,11 @@ double TComplex::imaginary_()
 {
 	return imaginary;
 }
-TComplex TComplex::operator * (const TComplex &N)
+TComplex TComplex::operator * (const TComplex &N)const 
 {
 	return TComplex(real*N.real - imaginary*N.imaginary, real*N.imaginary + imaginary*N.real);
 }
-TComplex TComplex::operator / (const TComplex &N)
+TComplex TComplex::operator / (const TComplex &N)const 
 {
 	return TComplex((real*N.real + imaginary*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary), (N.real*imaginary - real*N.imaginary) / (N.real*N.real + N.imaginary*N.imaginary));
 }
