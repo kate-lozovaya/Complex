@@ -19,6 +19,6 @@ public:
 	TComplex& operator /= (const TComplex &N);
 	TComplex& operator = (const TComplex &N);
 	bool operator == (const TComplex &N);
-	friend ostream& operator << (ostream &out, const TComplex &N);
-	friend istream& operator >> (istream &in, const TComplex &N);
+	friend ostream& operator << (ostream &out, TComplex &N);
+	friend istream& operator >> (istream &in, TComplex &N);
 };
